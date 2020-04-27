@@ -6,6 +6,7 @@ Github: github.com/MicroOptimization
 """
 import discord
 import generic_key_retriever
+import asyncio
 
 class MyClient(discord.Client):
 
@@ -24,8 +25,9 @@ class MyClient(discord.Client):
     async def on_message(self, message):    
         print('Message from {0.author} from {0.channel}: {0.content}'.format(message))
         text = message.content
-        message_words = text.split(" ")
+        words = text.split(" ")
         
+        await asyncio.sleep(0.5)
         await message.channel.send("'{}'".format("Hello there, I'm a bot"))
         
         
