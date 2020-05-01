@@ -27,10 +27,17 @@ class MyClient(discord.Client):
         text = message.content
         words = text.split(" ")
         
+        
+        id = 0 #Insert an ID int here
+        
         await asyncio.sleep(0.5)
         await message.channel.send("'{}'".format("Hello there, I'm a bot"))
         
         
+        #User_id comes from when you @ a user in a message that the bot detects.
+        #user = client.get_user(int(user_id[2][3:-1]))
+        #Allows you to DM another user if you use:
+        #await user.send("Your Message")
 
 client = MyClient()
 
